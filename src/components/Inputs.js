@@ -1,7 +1,7 @@
-import { VStack, Input, InputGroup, InputLeftAddon, useToast, Box, Button } from "@chakra-ui/react";
+import { VStack, Input, InputGroup, InputLeftAddon, FormLabel, useToast, Box, Button } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Alert from "./Alert";
+import AlertPop from "./Alert";
 import Stats from "./Stats";
 
 export  default function Inputs() {
@@ -30,6 +30,7 @@ export  default function Inputs() {
     <Box>
       <form onSubmit={handleSubmit(onSubmit)}>
         <VStack>
+        <FormLabel textAlign="left">Nombre</FormLabel>
           <Input
             type="text"
             placeholder="Nombre"
@@ -39,7 +40,8 @@ export  default function Inputs() {
               maxLength: 80
             })}
           />
-          { errors.nombre && <Alert title={errors.nombre.message} />}
+          { errors.nombre && <AlertPop title={errors.nombre.message} />}
+          <FormLabel>Apellido</FormLabel>
           <Input
             type="text"
             placeholder="Apellido"
@@ -49,17 +51,19 @@ export  default function Inputs() {
               maxLength: 100
             })}
           />
-          { errors.apellido && <Alert title={errors.apellido.message} />}
+          { errors.apellido && <AlertPop title={errors.apellido.message} />}
+          <FormLabel>Rut</FormLabel>
           <Input
             type="text"
             placeholder="Rut"
             {...register("rut", {
-              required: "Ingrese un nombre",
-              minLength:6,
-              maxLength: 9
+              required: "Ingrese un rut",
+              minLength:3,
+              maxLength: 100
             })}
           />
-          { errors.rut && <Alert title={errors.rut.message} />}
+          { errors.nombre && <AlertPop title={errors.rut.message} />}
+          <FormLabel>Email</FormLabel>
           <Input
             type="text"
             placeholder="Email"
@@ -69,7 +73,8 @@ export  default function Inputs() {
               maxLength: 100
             })}
           />
-          { errors.email && <Alert title={errors.email.message} />}
+          { errors.email && <AlertPop title={errors.email.message} />}
+          <FormLabel>Telefono</FormLabel>
           <InputGroup>
             <InputLeftAddon children="+56" />
             <Input type="tel" placeholder="Telefono"
@@ -77,7 +82,8 @@ export  default function Inputs() {
               required: "Ingrese un telefono"
             })} />
           </InputGroup>
-          { errors.telefono && <Alert title={errors.telefono.message} />}
+          { errors.telefono && <AlertPop title={errors.telefono.message} />}
+          <FormLabel>Direccion</FormLabel>
           <Input
             type="text"
             placeholder="Direccion"
@@ -87,7 +93,7 @@ export  default function Inputs() {
               maxLength: 100
             })}
           />
-          { errors.direccion && <Alert title={errors.direccion.message} />}
+          { errors.direccion && <AlertPop title={errors.direccion.message} />}
           <Button
             borderRadius="md"
             bg="cyan.600"

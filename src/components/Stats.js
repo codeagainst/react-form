@@ -21,12 +21,16 @@ export default function Stats(props) {
         align="flex-start"
       >
         <HStack>
-          <StatLabel>Nombre: {props.nombre}</StatLabel>
-          <StatLabel>Apeliido: {props.apellido}</StatLabel>
-          <StatLabel>Rut: {props.rut}</StatLabel>
-          <StatLabel>Email: {props.email}</StatLabel>
-          <StatLabel>Telefono: {props.telefono}</StatLabel>
-          <StatLabel>Direccion: {props.direccion}</StatLabel>
+          <StatLabel>Nombre: {props.Nombre}</StatLabel>
+          <StatLabel>Apeliido: {props.Apellido}</StatLabel>
+          <StatLabel>Rut: {props.Rut}</StatLabel>
+        </HStack>
+        <HStack>
+          <StatLabel>Email: {props.Email}</StatLabel>
+          <StatLabel>Telefono: {props.Telefono}</StatLabel>
+        </HStack>
+        <HStack>
+          <StatLabel>Direccion: {props.Direccion}</StatLabel>
         </HStack>
       </Stack>
     </Stat>
